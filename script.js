@@ -580,6 +580,56 @@ function scoreSkill(skill) {
   return { correct: correct, total: total, configured: configured, complete: configured === total };
 }
 
+async function sendSubmission() {
+  const s = state.scores || {};
+  const objectiveScore =
+    (s.objective !== null && s.objective !== undefined)
+      ? s.objective + '/75'
+      : '';
+
+  const payload = {
+    name: state.candidate.name,
+    phone: state.candidate.phone,
+    email: state.candidate.email,
+
+    listening:
+      s.listening && s.listening.complete
+        ? s.listening.correct + '/35'
+        : '',
+
+    reading:
+      s.reading && s.reading.complete
+        ? s.reading.correct + '/40'
+        : '',
+
+    writingTask1: state.writing.task1,
+    writingTask2: state.writing.task2,
+
+    totalScore: objectiveScore,
+
+    note: JSON.stringify({
+      studentId: state.candidate.studentId || '',
+      answers: state.answers,
+      submittedAt: new Date().toISOString(),
+      scores: state.scores
+    })
+  };
+
+  try {
+    await fetch(SUBMISSION_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    console.log('BETMA submission sent.');
+  } catch (error) {
+    console.error('BETMA submission failed:', error);
+  }
+}
 function submitTest() {
   if (state.submitted) return;
   SKILLS.forEach(stopClock);
@@ -595,8 +645,9 @@ function submitTest() {
   state.submitted = true;
   state.screen = 'result';
   save();
-  render();
-  window.scrollTo(0, 0);
+render();
+window.scrollTo(0, 0);
+sendSubmission();
 }
 
 function renderResult() {
