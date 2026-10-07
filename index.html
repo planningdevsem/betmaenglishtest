@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BETMA English – English Placement Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ TOP BAR (brand + timer + navigation) ============ -->
+<div class="topbar" id="topbar">
+  <header class="header">
+    <div class="brand"><span class="brand-mark">BETMA</span><span class="brand-sub">ENGLISH</span></div>
+    <div class="header-right">
+      <div class="candidate-chip" id="candidate-chip" hidden></div>
+      <div class="timer" id="timer" hidden>
+        <div class="timer-label">TIME REMAINING <span id="timer-skill"></span></div>
+        <div class="timer-value" id="timer-value" aria-live="off">00:00</div>
+      </div>
+    </div>
+  </header>
+  <nav class="nav" id="nav" aria-label="Test navigation">
+    <button type="button" class="nav-btn" data-nav="information"><span class="nav-name">INFORMATION</span></button>
+    <button type="button" class="nav-btn" data-nav="listening"><span class="nav-name">LISTENING</span><span class="nav-prog" data-prog="listening"></span></button>
+    <button type="button" class="nav-btn" data-nav="reading"><span class="nav-name">READING</span><span class="nav-prog" data-prog="reading"></span></button>
+    <button type="button" class="nav-btn" data-nav="writing"><span class="nav-name">WRITING</span><span class="nav-prog" data-prog="writing"></span></button>
+    <button type="button" class="nav-btn" data-nav="review"><span class="nav-name">REVIEW</span></button>
+    <button type="button" class="nav-btn nav-submit" data-nav="submit"><span class="nav-name">SUBMIT</span></button>
+  </nav>
+</div>
+
+<main class="container">
+
+<!-- ============ SCREEN 1: CANDIDATE INFORMATION ============ -->
+<section class="screen" id="screen-information">
+  <div class="card info-card">
+    <h1 class="hero-brand">BETMA ENGLISH</h1>
+    <p class="hero-sub">ENGLISH PLACEMENT TEST</p>
+
+    <form id="info-form" novalidate>
+      <div class="field">
+        <label for="f-name">Họ và tên <span class="req">*</span></label>
+        <input type="text" id="f-name" autocomplete="name">
+        <div class="field-error" id="err-name"></div>
+      </div>
+      <div class="field">
+        <label for="f-phone">Số điện thoại <span class="req">*</span></label>
+        <input type="tel" id="f-phone" autocomplete="tel" inputmode="tel">
+        <div class="field-error" id="err-phone"></div>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input type="email" id="f-email" autocomplete="email">
+        <div class="field-error" id="err-email"></div>
+      </div>
+      <div class="field">
+        <label for="f-sid">Mã học viên <span class="opt-note">(không bắt buộc)</span></label>
+        <input type="text" id="f-sid">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-start">BẮT ĐẦU BÀI TEST</button>
+      <button type="button" class="btn btn-primary btn-lg" id="btn-continue" hidden>CONTINUE TEST</button>
+    </form>
+
+    <div class="overview">
+      <div class="overview-item"><strong>Listening</strong><span>35 questions &middot; 40 minutes</span></div>
+      <div class="overview-item"><strong>Reading</strong><span>40 questions &middot; 60 minutes</span></div>
+      <div class="overview-item"><strong>Writing</strong><span>2 tasks &middot; 60 minutes</span></div>
+    </div>
+    <p class="overview-note">Each section has its own timer, which runs only while you are inside that section. Each Listening audio can be played once only.</p>
+    <div class="field-error" id="storage-warning" hidden>Your browser is blocking local storage. Your progress will be lost if you refresh the page.</div>
+  </div>
+</section>
+
+<!-- ============ SCREEN 2: LISTENING ============ -->
+<section class="screen exam" id="screen-listening" data-skill="listening" hidden>
+  <div class="exam-title">LISTENING TEST 1<br><span style="font-weight:normal">(Levels 3 – 5)<br>Time permitted: 40'</span></div>
+  <div class="q-palette" data-palette="listening" aria-label="Question navigator"></div>
+  <div class="warn" data-warn="listening" hidden></div>
+  <div class="lock-note" data-lock="listening" hidden>Time is up for this section. Your answers are locked.</div>
+  <div class="exam-body">
+
+<p><b>Directions:</b> In this section of the test, you will have an opportunity to demonstrate your ability to understand conversations and talks in English. There are three parts in this section with special directions for each part. Answer all the questions on the basis of what is stated or implied by the speakers in the recording.</p>
+<p>There will be time for you to read the instructions and you will have a chance to check your work. The recording will be played ONCE only.</p>
+<p><i>Time allowance:</i> about 40 minutes, including 07 minutes to transfer your answers to your answer sheet.</p>
+
+
+<section class="part" id="listening-part1">
+<h3>PART 1 - Questions 1-8</h3>
+<div class="audio-box" data-part="1">
+  <div class="audio-title">Audio &ndash; Part 1</div>
+  <audio preload="metadata" src="audio/listening-part1.mp3" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
+  <div class="audio-row">
+    <button type="button" class="btn btn-primary audio-btn">Play audio</button>
+    <div class="audio-bar" aria-hidden="true"><div class="audio-bar-fill"></div></div>
+    <span class="audio-time">0:00</span>
+  </div>
+  <div class="audio-status">The audio can be played ONCE only.</div>
+</div>
+<p><b>Directions:</b> In this part, you will hear EIGHT short announcements or instructions. There is one question for each announcement or instruction. For each question, choose the right answer A, B, C or D. Then, on the answer sheet, find the number of the question and fill in the space that corresponds to the letter of the answer that you have chosen.</p>
+<p><i>Now, let's listen to an example. On the recording, you will hear:</i></p>
+<p style="margin-left:30px">Woman: Hello. This is the travel agency returning your call. You left a message about the holiday you've booked, asking which meals are included in the cost during your stay at Sunny Hotel. Lunch and dinner are free but if you wish to have breakfast in the hotel, you will need to pay an extra amount of money, depending on what you order. Let me know if I can help you with any other information. Goodbye.</p>
+<p><i>On the test book, you will read:</i><br>Which meal is NOT included in the price of the holiday?<br>A. Breakfast &nbsp; B. Lunch &nbsp; C. Dinner &nbsp; D. All<br><i>The correct answer is A. Breakfast. Now, let's begin with the first question.</i></p>
+
+<div class="q-card" id="listening-q1" data-skill="listening" data-q="1">
+<div class="q-num">Question 1</div>
+<div class="q-text"><b>Where did the man leave his camera?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 1">
+<label class="opt"><input type="radio" name="listening-1" value="A" data-skill="listening" data-q="1"><span class="opt-letter">A.</span><span class="opt-text">On the steps</span></label>
+<label class="opt"><input type="radio" name="listening-1" value="B" data-skill="listening" data-q="1"><span class="opt-letter">B.</span><span class="opt-text">Next to the fountain</span></label>
+<label class="opt"><input type="radio" name="listening-1" value="C" data-skill="listening" data-q="1"><span class="opt-letter">C.</span><span class="opt-text">In the coat pocket</span></label>
+<label class="opt"><input type="radio" name="listening-1" value="D" data-skill="listening" data-q="1"><span class="opt-letter">D.</span><span class="opt-text">On the boat</span></label>
+</div></div>
+<div class="q-card" id="listening-q2" data-skill="listening" data-q="2">
+<div class="q-num">Question 2</div>
+<div class="q-text"><b>What is the woman's first memory?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 2">
+<label class="opt"><input type="radio" name="listening-2" value="A" data-skill="listening" data-q="2"><span class="opt-letter">A.</span><span class="opt-text">She went to the sea with her family.</span></label>
+<label class="opt"><input type="radio" name="listening-2" value="B" data-skill="listening" data-q="2"><span class="opt-letter">B.</span><span class="opt-text">She went to the sea with her father.</span></label>
+<label class="opt"><input type="radio" name="listening-2" value="C" data-skill="listening" data-q="2"><span class="opt-letter">C.</span><span class="opt-text">She went to the sea with her younger brother.</span></label>
+<label class="opt"><input type="radio" name="listening-2" value="D" data-skill="listening" data-q="2"><span class="opt-letter">D.</span><span class="opt-text">She went to the sea with her mother.</span></label>
+</div></div>
+<div class="q-card" id="listening-q3" data-skill="listening" data-q="3">
+<div class="q-num">Question 3</div>
+<div class="q-text"><b>Which train will the woman catch?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 3">
+<label class="opt"><input type="radio" name="listening-3" value="A" data-skill="listening" data-q="3"><span class="opt-letter">A.</span><span class="opt-text">8.15</span></label>
+<label class="opt"><input type="radio" name="listening-3" value="B" data-skill="listening" data-q="3"><span class="opt-letter">B.</span><span class="opt-text">10.15</span></label>
+<label class="opt"><input type="radio" name="listening-3" value="C" data-skill="listening" data-q="3"><span class="opt-letter">C.</span><span class="opt-text">9.15</span></label>
+<label class="opt"><input type="radio" name="listening-3" value="D" data-skill="listening" data-q="3"><span class="opt-letter">D.</span><span class="opt-text">10.30</span></label>
+</div></div>
+<div class="q-card" id="listening-q4" data-skill="listening" data-q="4">
+<div class="q-num">Question 4</div>
+<div class="q-text"><b>What should the students take with them tomorrow?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 4">
+<label class="opt"><input type="radio" name="listening-4" value="A" data-skill="listening" data-q="4"><span class="opt-letter">A.</span><span class="opt-text">Sweater, hat and drink</span></label>
+<label class="opt"><input type="radio" name="listening-4" value="B" data-skill="listening" data-q="4"><span class="opt-letter">B.</span><span class="opt-text">Sweater, notebook and drink</span></label>
+<label class="opt"><input type="radio" name="listening-4" value="C" data-skill="listening" data-q="4"><span class="opt-letter">C.</span><span class="opt-text">Drink, hat and notebook</span></label>
+<label class="opt"><input type="radio" name="listening-4" value="D" data-skill="listening" data-q="4"><span class="opt-letter">D.</span><span class="opt-text">Drink, hat, notebook and sweater</span></label>
+</div></div>
+<div class="q-card" id="listening-q5" data-skill="listening" data-q="5">
+<div class="q-num">Question 5</div>
+<div class="q-text"><b>What will they do at the weekend?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 5">
+<label class="opt"><input type="radio" name="listening-5" value="A" data-skill="listening" data-q="5"><span class="opt-letter">A.</span><span class="opt-text">Visit the zoo</span></label>
+<label class="opt"><input type="radio" name="listening-5" value="B" data-skill="listening" data-q="5"><span class="opt-letter">B.</span><span class="opt-text">Take a picnic to the castle</span></label>
+<label class="opt"><input type="radio" name="listening-5" value="C" data-skill="listening" data-q="5"><span class="opt-letter">C.</span><span class="opt-text">Go to the beach</span></label>
+<label class="opt"><input type="radio" name="listening-5" value="D" data-skill="listening" data-q="5"><span class="opt-letter">D.</span><span class="opt-text">Go on a river trip</span></label>
+</div></div>
+<div class="q-card" id="listening-q6" data-skill="listening" data-q="6">
+<div class="q-num">Question 6</div>
+<div class="q-text"><b>What does the woman need to buy?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 6">
+<label class="opt"><input type="radio" name="listening-6" value="A" data-skill="listening" data-q="6"><span class="opt-letter">A.</span><span class="opt-text">Milk, apple and bread</span></label>
+<label class="opt"><input type="radio" name="listening-6" value="B" data-skill="listening" data-q="6"><span class="opt-letter">B.</span><span class="opt-text">Milk, apple, and toothpaste</span></label>
+<label class="opt"><input type="radio" name="listening-6" value="C" data-skill="listening" data-q="6"><span class="opt-letter">C.</span><span class="opt-text">Milk, bread and apples</span></label>
+<label class="opt"><input type="radio" name="listening-6" value="D" data-skill="listening" data-q="6"><span class="opt-letter">D.</span><span class="opt-text">Milk, bread and toothpaste</span></label>
+</div></div>
+<div class="q-card" id="listening-q7" data-skill="listening" data-q="7">
+<div class="q-num">Question 7</div>
+<div class="q-text"><b>How will the boy get to school?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 7">
+<label class="opt"><input type="radio" name="listening-7" value="A" data-skill="listening" data-q="7"><span class="opt-letter">A.</span><span class="opt-text">By bike</span></label>
+<label class="opt"><input type="radio" name="listening-7" value="B" data-skill="listening" data-q="7"><span class="opt-letter">B.</span><span class="opt-text">By school bus</span></label>
+<label class="opt"><input type="radio" name="listening-7" value="C" data-skill="listening" data-q="7"><span class="opt-letter">C.</span><span class="opt-text">By skiing</span></label>
+<label class="opt"><input type="radio" name="listening-7" value="D" data-skill="listening" data-q="7"><span class="opt-letter">D.</span><span class="opt-text">On foot</span></label>
+</div></div>
+<div class="q-card" id="listening-q8" data-skill="listening" data-q="8">
+<div class="q-num">Question 8</div>
+<div class="q-text"><b>What is Tanya's boyfriend doing on the television now?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 8">
+<label class="opt"><input type="radio" name="listening-8" value="A" data-skill="listening" data-q="8"><span class="opt-letter">A.</span><span class="opt-text">He is playing the keyboard.</span></label>
+<label class="opt"><input type="radio" name="listening-8" value="B" data-skill="listening" data-q="8"><span class="opt-letter">B.</span><span class="opt-text">He is playing the guitar.</span></label>
+<label class="opt"><input type="radio" name="listening-8" value="C" data-skill="listening" data-q="8"><span class="opt-letter">C.</span><span class="opt-text">He is playing the drum.</span></label>
+<label class="opt"><input type="radio" name="listening-8" value="D" data-skill="listening" data-q="8"><span class="opt-letter">D.</span><span class="opt-text">He is singing.</span></label>
+</div></div>
+
+
+</section>
+<section class="part" id="listening-part2">
+<h3>PART 2 - Questions 9-20</h3>
+<div class="audio-box" data-part="2">
+  <div class="audio-title">Audio &ndash; Part 2</div>
+  <audio preload="metadata" src="audio/listening-part2.mp3" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
+  <div class="audio-row">
+    <button type="button" class="btn btn-primary audio-btn">Play audio</button>
+    <div class="audio-bar" aria-hidden="true"><div class="audio-bar-fill"></div></div>
+    <span class="audio-time">0:00</span>
+  </div>
+  <div class="audio-status">The audio can be played ONCE only.</div>
+</div>
+<p><b>Directions:</b> In this part, you will hear THREE conversations. There are four questions for each conversation. For each question, choose the correct answer A, B, C or D. You will hear the conversations only ONCE.</p>
+<p><b>Questions 9 to 12.<br>Conversation 1. You will hear a part of an interview with a boy called Simon who is helping to protect the environment.</b></p>
+<div class="q-card" id="listening-q9" data-skill="listening" data-q="9">
+<div class="q-num">Question 9</div>
+<div class="q-text"><b>Why does Simon like the River Stanton?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 9">
+<label class="opt"><input type="radio" name="listening-9" value="A" data-skill="listening" data-q="9"><span class="opt-letter">A.</span><span class="opt-text">Because of its water speed</span></label>
+<label class="opt"><input type="radio" name="listening-9" value="B" data-skill="listening" data-q="9"><span class="opt-letter">B.</span><span class="opt-text">Because of its scenery</span></label>
+<label class="opt"><input type="radio" name="listening-9" value="C" data-skill="listening" data-q="9"><span class="opt-letter">C.</span><span class="opt-text">Because of its peace</span></label>
+<label class="opt"><input type="radio" name="listening-9" value="D" data-skill="listening" data-q="9"><span class="opt-letter">D.</span><span class="opt-text">Because of its dangers</span></label>
+</div></div>
+<div class="q-card" id="listening-q10" data-skill="listening" data-q="10">
+<div class="q-num">Question 10</div>
+<div class="q-text"><b>What was wrong with the river?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 10">
+<label class="opt"><input type="radio" name="listening-10" value="A" data-skill="listening" data-q="10"><span class="opt-letter">A.</span><span class="opt-text">The water turned brown when it was running low.</span></label>
+<label class="opt"><input type="radio" name="listening-10" value="B" data-skill="listening" data-q="10"><span class="opt-letter">B.</span><span class="opt-text">The water turned brown when it was running fast.</span></label>
+<label class="opt"><input type="radio" name="listening-10" value="C" data-skill="listening" data-q="10"><span class="opt-letter">C.</span><span class="opt-text">The water turned orange when it was running fast.</span></label>
+<label class="opt"><input type="radio" name="listening-10" value="D" data-skill="listening" data-q="10"><span class="opt-letter">D.</span><span class="opt-text">The water turned orange when it was running low.</span></label>
+</div></div>
+<div class="q-card" id="listening-q11" data-skill="listening" data-q="11">
+<div class="q-num">Question 11</div>
+<div class="q-text"><b>What was the cause of the river's problem?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 11">
+<label class="opt"><input type="radio" name="listening-11" value="A" data-skill="listening" data-q="11"><span class="opt-letter">A.</span><span class="opt-text">Old mine work</span></label>
+<label class="opt"><input type="radio" name="listening-11" value="B" data-skill="listening" data-q="11"><span class="opt-letter">B.</span><span class="opt-text">Farming activities</span></label>
+<label class="opt"><input type="radio" name="listening-11" value="C" data-skill="listening" data-q="11"><span class="opt-letter">C.</span><span class="opt-text">Fishing activities</span></label>
+<label class="opt"><input type="radio" name="listening-11" value="D" data-skill="listening" data-q="11"><span class="opt-letter">D.</span><span class="opt-text">Tousim activities</span></label>
+</div></div>
+<div class="q-card" id="listening-q12" data-skill="listening" data-q="12">
+<div class="q-num">Question 12</div>
+<div class="q-text"><b>What made Simon happy?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 12">
+<label class="opt"><input type="radio" name="listening-12" value="A" data-skill="listening" data-q="12"><span class="opt-letter">A.</span><span class="opt-text">He found the solution to the river's problem.</span></label>
+<label class="opt"><input type="radio" name="listening-12" value="B" data-skill="listening" data-q="12"><span class="opt-letter">B.</span><span class="opt-text">He found limestones in the river.</span></label>
+<label class="opt"><input type="radio" name="listening-12" value="C" data-skill="listening" data-q="12"><span class="opt-letter">C.</span><span class="opt-text">He found a lot of fish in the river.</span></label>
+<label class="opt"><input type="radio" name="listening-12" value="D" data-skill="listening" data-q="12"><span class="opt-letter">D.</span><span class="opt-text">He found a lot of plants in the river.</span></label>
+</div></div>
+
+<p><b>Questions 13 to 16.<br>Conversation 2. You will hear a student talking to a housing officer about living with a homestay family.</b></p>
+<div class="q-card" id="listening-q13" data-skill="listening" data-q="13">
+<div class="q-num">Question 13</div>
+<div class="q-text"><b>Why does the student want to live with a family?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 13">
+<label class="opt"><input type="radio" name="listening-13" value="A" data-skill="listening" data-q="13"><span class="opt-letter">A.</span><span class="opt-text">Because she feels homesick</span></label>
+<label class="opt"><input type="radio" name="listening-13" value="B" data-skill="listening" data-q="13"><span class="opt-letter">B.</span><span class="opt-text">Because she wants to improve her English</span></label>
+<label class="opt"><input type="radio" name="listening-13" value="C" data-skill="listening" data-q="13"><span class="opt-letter">C.</span><span class="opt-text">Because she doesn't want to cook</span></label>
+<label class="opt"><input type="radio" name="listening-13" value="D" data-skill="listening" data-q="13"><span class="opt-letter">D.</span><span class="opt-text">Because her friend is enjoying her homestay</span></label>
+</div></div>
+<div class="q-card" id="listening-q14" data-skill="listening" data-q="14">
+<div class="q-num">Question 14</div>
+<div class="q-text"><b>How long is the student's course?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 14">
+<label class="opt"><input type="radio" name="listening-14" value="A" data-skill="listening" data-q="14"><span class="opt-letter">A.</span><span class="opt-text">Four months</span></label>
+<label class="opt"><input type="radio" name="listening-14" value="B" data-skill="listening" data-q="14"><span class="opt-letter">B.</span><span class="opt-text">20 weeks</span></label>
+<label class="opt"><input type="radio" name="listening-14" value="C" data-skill="listening" data-q="14"><span class="opt-letter">C.</span><span class="opt-text">5 months</span></label>
+<label class="opt"><input type="radio" name="listening-14" value="D" data-skill="listening" data-q="14"><span class="opt-letter">D.</span><span class="opt-text">12 weeks</span></label>
+</div></div>
+<div class="q-card" id="listening-q15" data-skill="listening" data-q="15">
+<div class="q-num">Question 15</div>
+<div class="q-text"><b>What may the student like to eat?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 15">
+<label class="opt"><input type="radio" name="listening-15" value="A" data-skill="listening" data-q="15"><span class="opt-letter">A.</span><span class="opt-text">Seafood</span></label>
+<label class="opt"><input type="radio" name="listening-15" value="B" data-skill="listening" data-q="15"><span class="opt-letter">B.</span><span class="opt-text">Pork</span></label>
+<label class="opt"><input type="radio" name="listening-15" value="C" data-skill="listening" data-q="15"><span class="opt-letter">C.</span><span class="opt-text">Beef</span></label>
+<label class="opt"><input type="radio" name="listening-15" value="D" data-skill="listening" data-q="15"><span class="opt-letter">D.</span><span class="opt-text">Vegetable</span></label>
+</div></div>
+<div class="q-card" id="listening-q16" data-skill="listening" data-q="16">
+<div class="q-num">Question 16</div>
+<div class="q-text"><b>When does the officer give the student her homestay details?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 16">
+<label class="opt"><input type="radio" name="listening-16" value="A" data-skill="listening" data-q="16"><span class="opt-letter">A.</span><span class="opt-text">Right after he checks on his computer</span></label>
+<label class="opt"><input type="radio" name="listening-16" value="B" data-skill="listening" data-q="16"><span class="opt-letter">B.</span><span class="opt-text">At lunch time</span></label>
+<label class="opt"><input type="radio" name="listening-16" value="C" data-skill="listening" data-q="16"><span class="opt-letter">C.</span><span class="opt-text">In the afternoon</span></label>
+<label class="opt"><input type="radio" name="listening-16" value="D" data-skill="listening" data-q="16"><span class="opt-letter">D.</span><span class="opt-text">Tomorrow afternoon</span></label>
+</div></div>
+
+<p><b>Questions 17 to 20.<br>Conversation 3. You will hear an interview with Sophie Morrison, a translator.</b></p>
+<div class="q-card" id="listening-q17" data-skill="listening" data-q="17">
+<div class="q-num">Question 17</div>
+<div class="q-text"><b>What is Sophie's job now?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 17">
+<label class="opt"><input type="radio" name="listening-17" value="A" data-skill="listening" data-q="17"><span class="opt-letter">A.</span><span class="opt-text">A secretary</span></label>
+<label class="opt"><input type="radio" name="listening-17" value="B" data-skill="listening" data-q="17"><span class="opt-letter">B.</span><span class="opt-text">A translator</span></label>
+<label class="opt"><input type="radio" name="listening-17" value="C" data-skill="listening" data-q="17"><span class="opt-letter">C.</span><span class="opt-text">A manager</span></label>
+<label class="opt"><input type="radio" name="listening-17" value="D" data-skill="listening" data-q="17"><span class="opt-letter">D.</span><span class="opt-text">a designer</span></label>
+</div></div>
+<div class="q-card" id="listening-q18" data-skill="listening" data-q="18">
+<div class="q-num">Question 18</div>
+<div class="q-text"><b>What is the most challenging thing in Sophie's job?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 18">
+<label class="opt"><input type="radio" name="listening-18" value="A" data-skill="listening" data-q="18"><span class="opt-letter">A.</span><span class="opt-text">Technical terms</span></label>
+<label class="opt"><input type="radio" name="listening-18" value="B" data-skill="listening" data-q="18"><span class="opt-letter">B.</span><span class="opt-text">Informal expressions</span></label>
+<label class="opt"><input type="radio" name="listening-18" value="C" data-skill="listening" data-q="18"><span class="opt-letter">C.</span><span class="opt-text">Scientific terms</span></label>
+<label class="opt"><input type="radio" name="listening-18" value="D" data-skill="listening" data-q="18"><span class="opt-letter">D.</span><span class="opt-text">cultural preferences</span></label>
+</div></div>
+<div class="q-card" id="listening-q19" data-skill="listening" data-q="19">
+<div class="q-num">Question 19</div>
+<div class="q-text"><b>According to Sophie, what is the advantage of working from home?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 19">
+<label class="opt"><input type="radio" name="listening-19" value="A" data-skill="listening" data-q="19"><span class="opt-letter">A.</span><span class="opt-text">She doesn't have to travel to work.</span></label>
+<label class="opt"><input type="radio" name="listening-19" value="B" data-skill="listening" data-q="19"><span class="opt-letter">B.</span><span class="opt-text">She doesn't have to dress formally.</span></label>
+<label class="opt"><input type="radio" name="listening-19" value="C" data-skill="listening" data-q="19"><span class="opt-letter">C.</span><span class="opt-text">She doesn't have to sign contracts.</span></label>
+<label class="opt"><input type="radio" name="listening-19" value="D" data-skill="listening" data-q="19"><span class="opt-letter">D.</span><span class="opt-text">Her working time can be flexible.</span></label>
+</div></div>
+<div class="q-card" id="listening-q20" data-skill="listening" data-q="20">
+<div class="q-num">Question 20</div>
+<div class="q-text"><b>What does Sophie think about her job in the future?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 20">
+<label class="opt"><input type="radio" name="listening-20" value="A" data-skill="listening" data-q="20"><span class="opt-letter">A.</span><span class="opt-text">It will be more demanding.</span></label>
+<label class="opt"><input type="radio" name="listening-20" value="B" data-skill="listening" data-q="20"><span class="opt-letter">B.</span><span class="opt-text">It will be easier.</span></label>
+<label class="opt"><input type="radio" name="listening-20" value="C" data-skill="listening" data-q="20"><span class="opt-letter">C.</span><span class="opt-text">It is not necessary any more.</span></label>
+<label class="opt"><input type="radio" name="listening-20" value="D" data-skill="listening" data-q="20"><span class="opt-letter">D.</span><span class="opt-text">It can help her earn a lot of money.</span></label>
+</div></div>
+
+
+</section>
+<section class="part" id="listening-part3">
+<h3>PART 3 - Questions 21-35</h3>
+<div class="audio-box" data-part="3">
+  <div class="audio-title">Audio &ndash; Part 3</div>
+  <audio preload="metadata" src="audio/listening-part3.mp3" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
+  <div class="audio-row">
+    <button type="button" class="btn btn-primary audio-btn">Play audio</button>
+    <div class="audio-bar" aria-hidden="true"><div class="audio-bar-fill"></div></div>
+    <span class="audio-time">0:00</span>
+  </div>
+  <div class="audio-status">The audio can be played ONCE only.</div>
+</div>
+<p><b>Directions:</b> In this part, you will hear THREE talks or lectures. There are five questions for each talk or lecture. For each question, choose the correct answer A, B, C or D. You will hear the talks or lectures only ONCE.</p>
+<p><b>Questions 21-26: You will hear a talk about learning a language.</b></p>
+<div class="q-card" id="listening-q21" data-skill="listening" data-q="21">
+<div class="q-num">Question 21</div>
+<div class="q-text"><b>Which area in the world has the speaker not lived in?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 21">
+<label class="opt"><input type="radio" name="listening-21" value="A" data-skill="listening" data-q="21"><span class="opt-letter">A.</span><span class="opt-text">Asia</span></label>
+<label class="opt"><input type="radio" name="listening-21" value="B" data-skill="listening" data-q="21"><span class="opt-letter">B.</span><span class="opt-text">Europe</span></label>
+<label class="opt"><input type="radio" name="listening-21" value="C" data-skill="listening" data-q="21"><span class="opt-letter">C.</span><span class="opt-text">South America</span></label>
+<label class="opt"><input type="radio" name="listening-21" value="D" data-skill="listening" data-q="21"><span class="opt-letter">D.</span><span class="opt-text">Middle East</span></label>
+</div></div>
+<div class="q-card" id="listening-q22" data-skill="listening" data-q="22">
+<div class="q-num">Question 22</div>
+<div class="q-text"><b>Which two things does the speaker do to learn a new language?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 22">
+<label class="opt"><input type="radio" name="listening-22" value="A" data-skill="listening" data-q="22"><span class="opt-letter">A.</span><span class="opt-text">go to classes and speak to people</span></label>
+<label class="opt"><input type="radio" name="listening-22" value="B" data-skill="listening" data-q="22"><span class="opt-letter">B.</span><span class="opt-text">watch TV and listen to the radio</span></label>
+<label class="opt"><input type="radio" name="listening-22" value="C" data-skill="listening" data-q="22"><span class="opt-letter">C.</span><span class="opt-text">speak to people and use a dictionary</span></label>
+<label class="opt"><input type="radio" name="listening-22" value="D" data-skill="listening" data-q="22"><span class="opt-letter">D.</span><span class="opt-text">Go to classes and watch TV</span></label>
+</div></div>
+<div class="q-card" id="listening-q23" data-skill="listening" data-q="23">
+<div class="q-num">Question 23</div>
+<div class="q-text"><b>What does the speaker say about using newspapers?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 23">
+<label class="opt"><input type="radio" name="listening-23" value="A" data-skill="listening" data-q="23"><span class="opt-letter">A.</span><span class="opt-text">It was easy to learn a lot of new words quickly.</span></label>
+<label class="opt"><input type="radio" name="listening-23" value="B" data-skill="listening" data-q="23"><span class="opt-letter">B.</span><span class="opt-text">It helps you save time learning a language.</span></label>
+<label class="opt"><input type="radio" name="listening-23" value="C" data-skill="listening" data-q="23"><span class="opt-letter">C.</span><span class="opt-text">Other people could explain new words the writer found.</span></label>
+<label class="opt"><input type="radio" name="listening-23" value="D" data-skill="listening" data-q="23"><span class="opt-letter">D.</span><span class="opt-text">It is so boring to read.</span></label>
+</div></div>
+<div class="q-card" id="listening-q24" data-skill="listening" data-q="24">
+<div class="q-num">Question 24</div>
+<div class="q-text"><b>What does the speaker say about talking to people in the street?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 24">
+<label class="opt"><input type="radio" name="listening-24" value="A" data-skill="listening" data-q="24"><span class="opt-letter">A.</span><span class="opt-text">You should rehearse in your head before you go.</span></label>
+<label class="opt"><input type="radio" name="listening-24" value="B" data-skill="listening" data-q="24"><span class="opt-letter">B.</span><span class="opt-text">People feel embarrased to talk to you.</span></label>
+<label class="opt"><input type="radio" name="listening-24" value="C" data-skill="listening" data-q="24"><span class="opt-letter">C.</span><span class="opt-text">people reacted negatively .</span></label>
+<label class="opt"><input type="radio" name="listening-24" value="D" data-skill="listening" data-q="24"><span class="opt-letter">D.</span><span class="opt-text">People are not eager to talk to you.</span></label>
+</div></div>
+<div class="q-card" id="listening-q25" data-skill="listening" data-q="25">
+<div class="q-num">Question 25</div>
+<div class="q-text"><b>Why were colloquial expressions a problem for the speaker?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 25">
+<label class="opt"><input type="radio" name="listening-25" value="A" data-skill="listening" data-q="25"><span class="opt-letter">A.</span><span class="opt-text">They took ten years to learn.</span></label>
+<label class="opt"><input type="radio" name="listening-25" value="B" data-skill="listening" data-q="25"><span class="opt-letter">B.</span><span class="opt-text">They were never written down.</span></label>
+<label class="opt"><input type="radio" name="listening-25" value="C" data-skill="listening" data-q="25"><span class="opt-letter">C.</span><span class="opt-text">They were often unnoticed.</span></label>
+<label class="opt"><input type="radio" name="listening-25" value="D" data-skill="listening" data-q="25"><span class="opt-letter">D.</span><span class="opt-text">They were often written down.</span></label>
+</div></div>
+
+<p><b>Questions 26-30: You will hear a talk about aging society.</b></p>
+<div class="q-card" id="listening-q26" data-skill="listening" data-q="26">
+<div class="q-num">Question 26</div>
+<div class="q-text"><b>What is Dr. Howard Miller's major?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 26">
+<label class="opt"><input type="radio" name="listening-26" value="A" data-skill="listening" data-q="26"><span class="opt-letter">A.</span><span class="opt-text">Psychology</span></label>
+<label class="opt"><input type="radio" name="listening-26" value="B" data-skill="listening" data-q="26"><span class="opt-letter">B.</span><span class="opt-text">History</span></label>
+<label class="opt"><input type="radio" name="listening-26" value="C" data-skill="listening" data-q="26"><span class="opt-letter">C.</span><span class="opt-text">Sociology</span></label>
+<label class="opt"><input type="radio" name="listening-26" value="D" data-skill="listening" data-q="26"><span class="opt-letter">D.</span><span class="opt-text">Geology</span></label>
+</div></div>
+<div class="q-card" id="listening-q27" data-skill="listening" data-q="27">
+<div class="q-num">Question 27</div>
+<div class="q-text"><b>What is Dr. Miller's grandfather biggest fear?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 27">
+<label class="opt"><input type="radio" name="listening-27" value="A" data-skill="listening" data-q="27"><span class="opt-letter">A.</span><span class="opt-text">Leaving his home of many years</span></label>
+<label class="opt"><input type="radio" name="listening-27" value="B" data-skill="listening" data-q="27"><span class="opt-letter">B.</span><span class="opt-text">The loss of his wife</span></label>
+<label class="opt"><input type="radio" name="listening-27" value="C" data-skill="listening" data-q="27"><span class="opt-letter">C.</span><span class="opt-text">The decline in his health</span></label>
+<label class="opt"><input type="radio" name="listening-27" value="D" data-skill="listening" data-q="27"><span class="opt-letter">D.</span><span class="opt-text">The loss of his hearing ability</span></label>
+</div></div>
+<div class="q-card" id="listening-q28" data-skill="listening" data-q="28">
+<div class="q-num">Question 28</div>
+<div class="q-text"><b>What do societies tend to value?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 28">
+<label class="opt"><input type="radio" name="listening-28" value="A" data-skill="listening" data-q="28"><span class="opt-letter">A.</span><span class="opt-text">Creative things</span></label>
+<label class="opt"><input type="radio" name="listening-28" value="B" data-skill="listening" data-q="28"><span class="opt-letter">B.</span><span class="opt-text">New things</span></label>
+<label class="opt"><input type="radio" name="listening-28" value="C" data-skill="listening" data-q="28"><span class="opt-letter">C.</span><span class="opt-text">Expensive things</span></label>
+<label class="opt"><input type="radio" name="listening-28" value="D" data-skill="listening" data-q="28"><span class="opt-letter">D.</span><span class="opt-text">life-long things</span></label>
+</div></div>
+<div class="q-card" id="listening-q29" data-skill="listening" data-q="29">
+<div class="q-num">Question 29</div>
+<div class="q-text"><b>Who does Dr. Miller want to find meaning ful purpose for?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 29">
+<label class="opt"><input type="radio" name="listening-29" value="A" data-skill="listening" data-q="29"><span class="opt-letter">A.</span><span class="opt-text">The elderly</span></label>
+<label class="opt"><input type="radio" name="listening-29" value="B" data-skill="listening" data-q="29"><span class="opt-letter">B.</span><span class="opt-text">Teachers and public affairs</span></label>
+<label class="opt"><input type="radio" name="listening-29" value="C" data-skill="listening" data-q="29"><span class="opt-letter">C.</span><span class="opt-text">The youth</span></label>
+<label class="opt"><input type="radio" name="listening-29" value="D" data-skill="listening" data-q="29"><span class="opt-letter">D.</span><span class="opt-text">Working people</span></label>
+</div></div>
+<div class="q-card" id="listening-q30" data-skill="listening" data-q="30">
+<div class="q-num">Question 30</div>
+<div class="q-text"><b>What do you think the speaker will talk about in the next part of his speech?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 30">
+<label class="opt"><input type="radio" name="listening-30" value="A" data-skill="listening" data-q="30"><span class="opt-letter">A.</span><span class="opt-text">the contributions the elderly can make in our societies</span></label>
+<label class="opt"><input type="radio" name="listening-30" value="B" data-skill="listening" data-q="30"><span class="opt-letter">B.</span><span class="opt-text">the swelling burden of supporting welfare programs in the future</span></label>
+<label class="opt"><input type="radio" name="listening-30" value="C" data-skill="listening" data-q="30"><span class="opt-letter">C.</span><span class="opt-text">our responsibility of building retirement homes for our graying society</span></label>
+<label class="opt"><input type="radio" name="listening-30" value="D" data-skill="listening" data-q="30"><span class="opt-letter">D.</span><span class="opt-text">the need of paying more attention to the elder's health problem</span></label>
+</div></div>
+
+<p><b>Questions 31-35: You will hear a talk about British festivals.</b></p>
+<div class="q-card" id="listening-q31" data-skill="listening" data-q="31">
+<div class="q-num">Question 31</div>
+<div class="q-text"><b>What is the Clavie?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 31">
+<label class="opt"><input type="radio" name="listening-31" value="A" data-skill="listening" data-q="31"><span class="opt-letter">A.</span><span class="opt-text">a whisky container</span></label>
+<label class="opt"><input type="radio" name="listening-31" value="B" data-skill="listening" data-q="31"><span class="opt-letter">B.</span><span class="opt-text">a wooden cross</span></label>
+<label class="opt"><input type="radio" name="listening-31" value="C" data-skill="listening" data-q="31"><span class="opt-letter">C.</span><span class="opt-text">a bonfire made of things people don't need</span></label>
+<label class="opt"><input type="radio" name="listening-31" value="D" data-skill="listening" data-q="31"><span class="opt-letter">D.</span><span class="opt-text">a kind of whisky</span></label>
+</div></div>
+<div class="q-card" id="listening-q32" data-skill="listening" data-q="32">
+<div class="q-num">Question 32</div>
+<div class="q-text"><b>What do they burn to protect them from evil spirits?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 32">
+<label class="opt"><input type="radio" name="listening-32" value="A" data-skill="listening" data-q="32"><span class="opt-letter">A.</span><span class="opt-text">Some of their clothes</span></label>
+<label class="opt"><input type="radio" name="listening-32" value="B" data-skill="listening" data-q="32"><span class="opt-letter">B.</span><span class="opt-text">A Viking boat</span></label>
+<label class="opt"><input type="radio" name="listening-32" value="C" data-skill="listening" data-q="32"><span class="opt-letter">C.</span><span class="opt-text">A line in the grass</span></label>
+<label class="opt"><input type="radio" name="listening-32" value="D" data-skill="listening" data-q="32"><span class="opt-letter">D.</span><span class="opt-text">A wooden man</span></label>
+</div></div>
+<div class="q-card" id="listening-q33" data-skill="listening" data-q="33">
+<div class="q-num">Question 33</div>
+<div class="q-text"><b>What do you have to do during the pancake race?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 33">
+<label class="opt"><input type="radio" name="listening-33" value="A" data-skill="listening" data-q="33"><span class="opt-letter">A.</span><span class="opt-text">Eat as many pancakes as possible</span></label>
+<label class="opt"><input type="radio" name="listening-33" value="B" data-skill="listening" data-q="33"><span class="opt-letter">B.</span><span class="opt-text">Run as fast as possible while tossing a pancake in a pan</span></label>
+<label class="opt"><input type="radio" name="listening-33" value="C" data-skill="listening" data-q="33"><span class="opt-letter">C.</span><span class="opt-text">Run and jump over the ropes without dropping the pancake</span></label>
+<label class="opt"><input type="radio" name="listening-33" value="D" data-skill="listening" data-q="33"><span class="opt-letter">D.</span><span class="opt-text">Run and jump over a hole without dropping the pancake</span></label>
+</div></div>
+<div class="q-card" id="listening-q34" data-skill="listening" data-q="34">
+<div class="q-num">Question 34</div>
+<div class="q-text"><b>Who often win the cheese rolling competition?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 34">
+<label class="opt"><input type="radio" name="listening-34" value="A" data-skill="listening" data-q="34"><span class="opt-letter">A.</span><span class="opt-text">top athletes</span></label>
+<label class="opt"><input type="radio" name="listening-34" value="B" data-skill="listening" data-q="34"><span class="opt-letter">B.</span><span class="opt-text">people from the village</span></label>
+<label class="opt"><input type="radio" name="listening-34" value="C" data-skill="listening" data-q="34"><span class="opt-letter">C.</span><span class="opt-text">visitors from all over the world</span></label>
+<label class="opt"><input type="radio" name="listening-34" value="D" data-skill="listening" data-q="34"><span class="opt-letter">D.</span><span class="opt-text">people from other villages</span></label>
+</div></div>
+<div class="q-card" id="listening-q35" data-skill="listening" data-q="35">
+<div class="q-num">Question 35</div>
+<div class="q-text"><b>What can the fattest snail receive?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 35">
+<label class="opt"><input type="radio" name="listening-35" value="A" data-skill="listening" data-q="35"><span class="opt-letter">A.</span><span class="opt-text">Extra lettuce</span></label>
+<label class="opt"><input type="radio" name="listening-35" value="B" data-skill="listening" data-q="35"><span class="opt-letter">B.</span><span class="opt-text">A cup</span></label>
+<label class="opt"><input type="radio" name="listening-35" value="C" data-skill="listening" data-q="35"><span class="opt-letter">C.</span><span class="opt-text">Some garlic and butter</span></label>
+<label class="opt"><input type="radio" name="listening-35" value="D" data-skill="listening" data-q="35"><span class="opt-letter">D.</span><span class="opt-text">Nothing</span></label>
+</div></div>
+
+
+</section>
+  </div>
+  <div class="screen-footer">
+    <span></span>
+    <button type="button" class="btn btn-primary" data-go="reading">NEXT: READING</button>
+  </div>
+</section>
+
+<!-- ============ SCREEN 3: READING ============ -->
+<section class="screen exam" id="screen-reading" data-skill="reading" hidden>
+  <div class="exam-title">READING TEST 1<br><span style="font-weight:normal">(Levels 3 – 5)<br>Time permitted: 60 minutes</span></div>
+  <div class="q-palette" data-palette="reading" aria-label="Question navigator"></div>
+  <div class="warn" data-warn="reading" hidden></div>
+  <div class="lock-note" data-lock="reading" hidden>Time is up for this section. Your answers are locked.</div>
+  <div class="exam-body">
+
+<p><i><b>Directions:</b> In this section you will read FOUR different passages. Each one is followed by 10 questions about it. For questions 1-40, you are to choose the best answer A, B, C or D, to each question. Then, on your answer sheet, find the number of the question and fill in the space that corresponds to the letter of the answer you have chosen. Answer all questions following a passage on the basis of what is stated or implied in that passage. You have 60 minutes to answer all the questions, including the time to transfer your answers to the answer sheet.</i></p>
+
+
+<section class="passage-block" id="reading-passage1">
+<h3>PASSAGE 1 – Questions 1-10</h3>
+<div class="reading-grid">
+<div class="passage-col" tabindex="0" aria-label="Reading passage 1">
+<p class="pg">Hong Kong is the name of an island off the coast of mainland China. The biggest and most important city on Hong Kong is Vitoria, but not many people use <b>this</b> name. People usually call the city Hong Kong too. Even though Hong Kong is small, only about 1000 square kilometers, around seven million people live there today. Hong Kong has a very interesting history. Many years ago the island of Hong Kong belonged to China and now it belongs to China again. However, for more than 150 years, Hong Kong was ruled by the British.</p>
+<p class="pg">Hong Kong has a very good port and in the middle of the 19th century, British ships often stopped there. They came to China to trade. However, in 1839 a war began between China and Britain which continued for three years. In 1842 the Chinese and the British held a meeting which ended the war. At the meeting, the island of Hong Kong was given to Britain. Fifty years later, 1898, China gave the area around Hong Kong to the British for 99 years. In 1997 the British returned Hong Kong to China but it was a very different place from the <b>deserted</b> island of 150 years ago.</p>
+<p class="pg">Not many people lived in Hong Kong when it was first given to Britain. Most of the people were Chinese farmers and fishermen and soon more Chinese arrived. Some of them left China because they could not find work there and others came to Hong Kong when there was a war in China. All of these people came to find a better life for themselves and their children. Beside the Chinese, many other people came. They came from India, Britain, Holland and many other countries. After some years they began to think of Hong Kong as their home and they began to work hard for their new home. They too wanted to make a better life for their families.</p>
+<p class="pg">People began to build factories and many kinds of things were produced such as clothes, medicines, machines and radios. These things were not only sold in Hong Kong but also to many other countries. Hong Kong soon became famous as a world centre for buying and selling, and it has continued to get stronger and stronger.</p>
+<p class="pg"><b>7A</b> In 1997, When Britain returned Hong Kong to China, there were many differences between the Hong Kong way of life and the Chinese way of life and people thought there might be some problems. <b>7B</b> Many people from Hong Kong didn't want to live by the Chinese rules. <b>7C</b> Meetings between the leaders of both countries were held and it was decided that Hong Kong would be ruled by "One country, two systems". <b>7D</b></p>
+<p class="pg">Today, Hong Kong is a world centre for trade and banking. There are world famous universities teaching in both English and in the Chinese language of Cantonese. The port is one the the finest in the world and the beautiful city of Victoria is built surrounding hills. For the visistor Hong Kong offers both East and West. You can go shopping, try food from many different countries, visit interesting places, and have a great time.</p>
+</div>
+<div class="questions-col">
+<div class="q-card" id="reading-q1" data-skill="reading" data-q="1">
+<div class="q-num">Question 1</div>
+<div class="q-text"><b>What does "this" in paragraph 1 refers to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 1">
+<label class="opt"><input type="radio" name="reading-1" value="A" data-skill="reading" data-q="1"><span class="opt-letter">A.</span><span class="opt-text">Hong Kong</span></label>
+<label class="opt"><input type="radio" name="reading-1" value="B" data-skill="reading" data-q="1"><span class="opt-letter">B.</span><span class="opt-text">Victoria</span></label>
+<label class="opt"><input type="radio" name="reading-1" value="C" data-skill="reading" data-q="1"><span class="opt-letter">C.</span><span class="opt-text">city</span></label>
+<label class="opt"><input type="radio" name="reading-1" value="D" data-skill="reading" data-q="1"><span class="opt-letter">D.</span><span class="opt-text">the coast</span></label>
+</div></div>
+<div class="q-card" id="reading-q2" data-skill="reading" data-q="2">
+<div class="q-num">Question 2</div>
+<div class="q-text"><b>There was a meeting between Britain and China because</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 2">
+<label class="opt"><input type="radio" name="reading-2" value="A" data-skill="reading" data-q="2"><span class="opt-letter">A.</span><span class="opt-text">They were fighting each other.</span></label>
+<label class="opt"><input type="radio" name="reading-2" value="B" data-skill="reading" data-q="2"><span class="opt-letter">B.</span><span class="opt-text">Britain wanted to buy Hong Kong.</span></label>
+<label class="opt"><input type="radio" name="reading-2" value="C" data-skill="reading" data-q="2"><span class="opt-letter">C.</span><span class="opt-text">China and Britain were friends.</span></label>
+<label class="opt"><input type="radio" name="reading-2" value="D" data-skill="reading" data-q="2"><span class="opt-letter">D.</span><span class="opt-text">China and Britain wanted to attack Hong Kong.</span></label>
+</div></div>
+<div class="q-card" id="reading-q3" data-skill="reading" data-q="3">
+<div class="q-num">Question 3</div>
+<div class="q-text"><b>The word "deserted" in paragraph 2 could best be replaced by</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 3">
+<label class="opt"><input type="radio" name="reading-3" value="A" data-skill="reading" data-q="3"><span class="opt-letter">A.</span><span class="opt-text">crowded</span></label>
+<label class="opt"><input type="radio" name="reading-3" value="B" data-skill="reading" data-q="3"><span class="opt-letter">B.</span><span class="opt-text">rich</span></label>
+<label class="opt"><input type="radio" name="reading-3" value="C" data-skill="reading" data-q="3"><span class="opt-letter">C.</span><span class="opt-text">poor</span></label>
+<label class="opt"><input type="radio" name="reading-3" value="D" data-skill="reading" data-q="3"><span class="opt-letter">D.</span><span class="opt-text">abandoned</span></label>
+</div></div>
+<div class="q-card" id="reading-q4" data-skill="reading" data-q="4">
+<div class="q-num">Question 4</div>
+<div class="q-text"><b>The main idea of the third paragraph is</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 4">
+<label class="opt"><input type="radio" name="reading-4" value="A" data-skill="reading" data-q="4"><span class="opt-letter">A.</span><span class="opt-text">How Hong Kong became a colony of Britain</span></label>
+<label class="opt"><input type="radio" name="reading-4" value="B" data-skill="reading" data-q="4"><span class="opt-letter">B.</span><span class="opt-text">Why Britain wanted Hong Kong</span></label>
+<label class="opt"><input type="radio" name="reading-4" value="C" data-skill="reading" data-q="4"><span class="opt-letter">C.</span><span class="opt-text">When China gave Hong Kong to Britain</span></label>
+<label class="opt"><input type="radio" name="reading-4" value="D" data-skill="reading" data-q="4"><span class="opt-letter">D.</span><span class="opt-text">Why Britain returned Hong Kong to China.</span></label>
+</div></div>
+<div class="q-card" id="reading-q5" data-skill="reading" data-q="5">
+<div class="q-num">Question 5</div>
+<div class="q-text"><b>Before the British came to Hong Kong,</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 5">
+<label class="opt"><input type="radio" name="reading-5" value="A" data-skill="reading" data-q="5"><span class="opt-letter">A.</span><span class="opt-text">there were many Chinese universities.</span></label>
+<label class="opt"><input type="radio" name="reading-5" value="B" data-skill="reading" data-q="5"><span class="opt-letter">B.</span><span class="opt-text">there were only a few English schools.</span></label>
+<label class="opt"><input type="radio" name="reading-5" value="C" data-skill="reading" data-q="5"><span class="opt-letter">C.</span><span class="opt-text">there were many English schools.</span></label>
+<label class="opt"><input type="radio" name="reading-5" value="D" data-skill="reading" data-q="5"><span class="opt-letter">D.</span><span class="opt-text">There were a few people living on the island.</span></label>
+</div></div>
+<div class="q-card" id="reading-q6" data-skill="reading" data-q="6">
+<div class="q-num">Question 6</div>
+<div class="q-text"><b>What does the author imply when stating "one country, two systems"?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 6">
+<label class="opt"><input type="radio" name="reading-6" value="A" data-skill="reading" data-q="6"><span class="opt-letter">A.</span><span class="opt-text">Hong Kong is not ruled by China because it has different way of life.</span></label>
+<label class="opt"><input type="radio" name="reading-6" value="B" data-skill="reading" data-q="6"><span class="opt-letter">B.</span><span class="opt-text">Hong Kong still belongs to Britain, but follows Chinese way of life.</span></label>
+<label class="opt"><input type="radio" name="reading-6" value="C" data-skill="reading" data-q="6"><span class="opt-letter">C.</span><span class="opt-text">Hong Kong is a part of China, but has its own way of life.</span></label>
+<label class="opt"><input type="radio" name="reading-6" value="D" data-skill="reading" data-q="6"><span class="opt-letter">D.</span><span class="opt-text">Hong Kong does not want to be a part of China.</span></label>
+</div></div>
+<div class="q-card" id="reading-q7" data-skill="reading" data-q="7">
+<div class="q-num">Question 7</div>
+<div class="q-text"><b>Look at paragraph 5, where the following sentence can be added?</b><br><b>This meant that Hong Kong people could continue to live in the way that they had, while being a part of of China.</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 7">
+<label class="opt"><input type="radio" name="reading-7" value="A" data-skill="reading" data-q="7"><span class="opt-letter">A.</span><span class="opt-text">7A</span></label>
+<label class="opt"><input type="radio" name="reading-7" value="B" data-skill="reading" data-q="7"><span class="opt-letter">B.</span><span class="opt-text">7B</span></label>
+<label class="opt"><input type="radio" name="reading-7" value="C" data-skill="reading" data-q="7"><span class="opt-letter">C.</span><span class="opt-text">7C</span></label>
+<label class="opt"><input type="radio" name="reading-7" value="D" data-skill="reading" data-q="7"><span class="opt-letter">D.</span><span class="opt-text">7D</span></label>
+</div></div>
+<div class="q-card" id="reading-q8" data-skill="reading" data-q="8">
+<div class="q-num">Question 8</div>
+<div class="q-text"><b>How is the information in the passage organized?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 8">
+<label class="opt"><input type="radio" name="reading-8" value="A" data-skill="reading" data-q="8"><span class="opt-letter">A.</span><span class="opt-text">in order of importance</span></label>
+<label class="opt"><input type="radio" name="reading-8" value="B" data-skill="reading" data-q="8"><span class="opt-letter">B.</span><span class="opt-text">in order of space</span></label>
+<label class="opt"><input type="radio" name="reading-8" value="C" data-skill="reading" data-q="8"><span class="opt-letter">C.</span><span class="opt-text">in chronological order</span></label>
+<label class="opt"><input type="radio" name="reading-8" value="D" data-skill="reading" data-q="8"><span class="opt-letter">D.</span><span class="opt-text">causes and effects</span></label>
+</div></div>
+<div class="q-card" id="reading-q9" data-skill="reading" data-q="9">
+<div class="q-num">Question 9</div>
+<div class="q-text"><b>In what paragaph does the author mention the jobs people in Hong Kong were mainly doing when it started to be an official colony of Britain?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 9">
+<label class="opt"><input type="radio" name="reading-9" value="A" data-skill="reading" data-q="9"><span class="opt-letter">A.</span><span class="opt-text">Paragraph 1</span></label>
+<label class="opt"><input type="radio" name="reading-9" value="B" data-skill="reading" data-q="9"><span class="opt-letter">B.</span><span class="opt-text">Paragraph 2</span></label>
+<label class="opt"><input type="radio" name="reading-9" value="C" data-skill="reading" data-q="9"><span class="opt-letter">C.</span><span class="opt-text">Paragraph 3</span></label>
+<label class="opt"><input type="radio" name="reading-9" value="D" data-skill="reading" data-q="9"><span class="opt-letter">D.</span><span class="opt-text">Paragraph 4</span></label>
+</div></div>
+<div class="q-card" id="reading-q10" data-skill="reading" data-q="10">
+<div class="q-num">Question 10</div>
+<div class="q-text"><b>What is the main purpose of the author when writing this passage?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 10">
+<label class="opt"><input type="radio" name="reading-10" value="A" data-skill="reading" data-q="10"><span class="opt-letter">A.</span><span class="opt-text">To explain why Hong Kong didn't want to become a part of China</span></label>
+<label class="opt"><input type="radio" name="reading-10" value="B" data-skill="reading" data-q="10"><span class="opt-letter">B.</span><span class="opt-text">To help the readers understand more about the history of Hong Kong</span></label>
+<label class="opt"><input type="radio" name="reading-10" value="C" data-skill="reading" data-q="10"><span class="opt-letter">C.</span><span class="opt-text">To persuade foreigners to visit Hong Kong</span></label>
+<label class="opt"><input type="radio" name="reading-10" value="D" data-skill="reading" data-q="10"><span class="opt-letter">D.</span><span class="opt-text">To explain why Hong Kong is a powerful island</span></label>
+</div></div>
+</div>
+</div>
+</section>
+<section class="passage-block" id="reading-passage2">
+<h3>PASSAGE 2 - Questions 11 –20</h3>
+<div class="reading-grid">
+<div class="passage-col" tabindex="0" aria-label="Reading passage 2">
+<p class="pg">Constellations are patterns of stars in the sky. Over many thousands of years, human beings living on the Earth have looked up and seen the shapes of people, animals and everyday objects - they 'joined the dots' of the stars to form patterns in the sky. They gave these shapes names, some of which we still use today. But why did they bother with constellations at all? One reason is that having constellations makes it easier to find your way around the sky. This is useful for finding north, or working out the date or the time. When there were no compasses, clocks or watches, this was all very important.</p>
+<p class="pg">There is another reason why constellations were so important. Imagine going back to a time before paper and pencil had been invented. Life was sparse. If you wanted to draw a picture, you had to scratch it out on a dark cave wall or write it in sand that could blow away. But at night an amazing pattern of bright specks of light would appear above your head. By joining the dots you could see almost any picture you wanted. You could imagine seeing your favourite shapes in the sky. You might tell others about the constellations you have made up. They might tell others, and your constellation could be passed down from generation to generation for hundreds or even thousands of years. This is how many of the constellations got the names we use.</p>
+<p class="pg">You don't see exactly the same part of the sky every night, though between one night and the next you won't see much of a difference. Over a few weeks you'll definitely notice that you can see some constellations that you couldn't see before and some constellations that you could see aren't there any more. This is because the Earth is moving around the Sun. As the Earth moves round in its orbit, the night side of the Earth (the side facing away from the Sun) faces out to different parts of space, where there are different constellations.</p>
+<p class="pg">This means that you see different constellations in different seasons. Orion and Taurus are (Northern Hemisphere) winter constellations, because you can see them on winter evenings. Cygnus and Scorpius are (Northern Hemisphere) summer constellations, because you can see them on summer evenings.</p>
+<p class="pg">So who <b>made up</b> the constellations and their names? The earliest people on the Earth were hunters and gatherers. They looked up into the sky and saw shapes that were important to them - like Orion the Hunter. Much later in human history, English farmers looked up into the sky and saw the shape of a Plough. Russian <b>peasants,</b> looking at the same group of stars, called it Ursa Major or The Great Bear. People in France called it Le Casserole meaning the Saucepan. People in the USA called it The Big Dipper meaning a soup ladle. All of these different names are used today. The only people who have decided on one set of names for the constellations are the astronomers. For example, they always call the Plough 'Ursa Major', and never any of the other names. They had to do this so that they all knew what other astronomers across the world were talking about.</p>
+<p class="pg">The stars in a constellation have nothing to do with each other; they can be very, very far apart, even if they appear to be right next to each other in the sky. Imagine looking up while standing in a street. You might see your hand next to a street light, which is next to the Moon, which is next to a planet, which is next to a star. All of these things are far away from each other, yet they can be next to each other when you look at them.</p>
+<p class="pg">If you like, you can look up into the sky, join the dots and make up your own constellations. Tell other people about your constellations. Maybe one day people all around the world will be using one of your constellation names!</p>
+</div>
+<div class="questions-col">
+<div class="q-card" id="reading-q11" data-skill="reading" data-q="11">
+<div class="q-num">Question 11</div>
+<div class="q-text"><b>What use for constellations is NOT mentioned in the opening paragraphs?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 11">
+<label class="opt"><input type="radio" name="reading-11" value="A" data-skill="reading" data-q="11"><span class="opt-letter">A.</span><span class="opt-text">To help people find their way</span></label>
+<label class="opt"><input type="radio" name="reading-11" value="B" data-skill="reading" data-q="11"><span class="opt-letter">B.</span><span class="opt-text">To understand the origins of life in the universe</span></label>
+<label class="opt"><input type="radio" name="reading-11" value="C" data-skill="reading" data-q="11"><span class="opt-letter">C.</span><span class="opt-text">To provide entertainment</span></label>
+<label class="opt"><input type="radio" name="reading-11" value="D" data-skill="reading" data-q="11"><span class="opt-letter">D.</span><span class="opt-text">To allow people to orientate themselves</span></label>
+</div></div>
+<div class="q-card" id="reading-q12" data-skill="reading" data-q="12">
+<div class="q-num">Question 12</div>
+<div class="q-text"><b>What is the best meaning of the word "sparse" in the second paragraph?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 12">
+<label class="opt"><input type="radio" name="reading-12" value="A" data-skill="reading" data-q="12"><span class="opt-letter">A.</span><span class="opt-text">rare</span></label>
+<label class="opt"><input type="radio" name="reading-12" value="B" data-skill="reading" data-q="12"><span class="opt-letter">B.</span><span class="opt-text">boring</span></label>
+<label class="opt"><input type="radio" name="reading-12" value="C" data-skill="reading" data-q="12"><span class="opt-letter">C.</span><span class="opt-text">difficult</span></label>
+<label class="opt"><input type="radio" name="reading-12" value="D" data-skill="reading" data-q="12"><span class="opt-letter">D.</span><span class="opt-text">tough</span></label>
+</div></div>
+<div class="q-card" id="reading-q13" data-skill="reading" data-q="13">
+<div class="q-num">Question 13</div>
+<div class="q-text"><b>Why do constellations change in the sky from month to month?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 13">
+<label class="opt"><input type="radio" name="reading-13" value="A" data-skill="reading" data-q="13"><span class="opt-letter">A.</span><span class="opt-text">Because of passing fashions</span></label>
+<label class="opt"><input type="radio" name="reading-13" value="B" data-skill="reading" data-q="13"><span class="opt-letter">B.</span><span class="opt-text">Because of the weather</span></label>
+<label class="opt"><input type="radio" name="reading-13" value="C" data-skill="reading" data-q="13"><span class="opt-letter">C.</span><span class="opt-text">Because of the Earth's movements</span></label>
+<label class="opt"><input type="radio" name="reading-13" value="D" data-skill="reading" data-q="13"><span class="opt-letter">D.</span><span class="opt-text">Because stars are always moving</span></label>
+</div></div>
+<div class="q-card" id="reading-q14" data-skill="reading" data-q="14">
+<div class="q-num">Question 14</div>
+<div class="q-text"><b>What is the best meaning of the phrase "made up" in the fourth paragraph?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 14">
+<label class="opt"><input type="radio" name="reading-14" value="A" data-skill="reading" data-q="14"><span class="opt-letter">A.</span><span class="opt-text">decided</span></label>
+<label class="opt"><input type="radio" name="reading-14" value="B" data-skill="reading" data-q="14"><span class="opt-letter">B.</span><span class="opt-text">looked into</span></label>
+<label class="opt"><input type="radio" name="reading-14" value="C" data-skill="reading" data-q="14"><span class="opt-letter">C.</span><span class="opt-text">worked out</span></label>
+<label class="opt"><input type="radio" name="reading-14" value="D" data-skill="reading" data-q="14"><span class="opt-letter">D.</span><span class="opt-text">discovered</span></label>
+</div></div>
+<div class="q-card" id="reading-q15" data-skill="reading" data-q="15">
+<div class="q-num">Question 15</div>
+<div class="q-text"><b>What is the best meaning of the phrase "peasants" in paragraph 5?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 15">
+<label class="opt"><input type="radio" name="reading-15" value="A" data-skill="reading" data-q="15"><span class="opt-letter">A.</span><span class="opt-text">workers</span></label>
+<label class="opt"><input type="radio" name="reading-15" value="B" data-skill="reading" data-q="15"><span class="opt-letter">B.</span><span class="opt-text">hunters</span></label>
+<label class="opt"><input type="radio" name="reading-15" value="C" data-skill="reading" data-q="15"><span class="opt-letter">C.</span><span class="opt-text">gatherers</span></label>
+<label class="opt"><input type="radio" name="reading-15" value="D" data-skill="reading" data-q="15"><span class="opt-letter">D.</span><span class="opt-text">farmers</span></label>
+</div></div>
+<div class="q-card" id="reading-q16" data-skill="reading" data-q="16">
+<div class="q-num">Question 16</div>
+<div class="q-text"><b>Why do astronomers call the constellation 'Ursa Major' by this name?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 16">
+<label class="opt"><input type="radio" name="reading-16" value="A" data-skill="reading" data-q="16"><span class="opt-letter">A.</span><span class="opt-text">To ease international communication</span></label>
+<label class="opt"><input type="radio" name="reading-16" value="B" data-skill="reading" data-q="16"><span class="opt-letter">B.</span><span class="opt-text">Because the Russians insisted</span></label>
+<label class="opt"><input type="radio" name="reading-16" value="C" data-skill="reading" data-q="16"><span class="opt-letter">C.</span><span class="opt-text">Because Russia provides much of the finance for these organisations</span></label>
+<label class="opt"><input type="radio" name="reading-16" value="D" data-skill="reading" data-q="16"><span class="opt-letter">D.</span><span class="opt-text">They decided that's what it most looks like</span></label>
+</div></div>
+<div class="q-card" id="reading-q17" data-skill="reading" data-q="17">
+<div class="q-num">Question 17</div>
+<div class="q-text"><b>What point is being made in the penultimate paragraph?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 17">
+<label class="opt"><input type="radio" name="reading-17" value="A" data-skill="reading" data-q="17"><span class="opt-letter">A.</span><span class="opt-text">Stars used to be closer together</span></label>
+<label class="opt"><input type="radio" name="reading-17" value="B" data-skill="reading" data-q="17"><span class="opt-letter">B.</span><span class="opt-text">The stars look different depending on where you are standing</span></label>
+<label class="opt"><input type="radio" name="reading-17" value="C" data-skill="reading" data-q="17"><span class="opt-letter">C.</span><span class="opt-text">You won't see stars well under street lights</span></label>
+<label class="opt"><input type="radio" name="reading-17" value="D" data-skill="reading" data-q="17"><span class="opt-letter">D.</span><span class="opt-text">Perspective makes stars seem closer</span></label>
+</div></div>
+<div class="q-card" id="reading-q18" data-skill="reading" data-q="18">
+<div class="q-num">Question 18</div>
+<div class="q-text"><b>In which paragraph does the writer state examples of differentconstellations in different seasons?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 18">
+<label class="opt"><input type="radio" name="reading-18" value="A" data-skill="reading" data-q="18"><span class="opt-letter">A.</span><span class="opt-text">Paragraph 2</span></label>
+<label class="opt"><input type="radio" name="reading-18" value="B" data-skill="reading" data-q="18"><span class="opt-letter">B.</span><span class="opt-text">Paragraph 3</span></label>
+<label class="opt"><input type="radio" name="reading-18" value="C" data-skill="reading" data-q="18"><span class="opt-letter">C.</span><span class="opt-text">Paragraph 4</span></label>
+<label class="opt"><input type="radio" name="reading-18" value="D" data-skill="reading" data-q="18"><span class="opt-letter">D.</span><span class="opt-text">Paragraph 5</span></label>
+</div></div>
+<div class="q-card" id="reading-q19" data-skill="reading" data-q="19">
+<div class="q-num">Question 19</div>
+<div class="q-text"><b>Where would you most likely find this text?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 19">
+<label class="opt"><input type="radio" name="reading-19" value="A" data-skill="reading" data-q="19"><span class="opt-letter">A.</span><span class="opt-text">A scholarly publication</span></label>
+<label class="opt"><input type="radio" name="reading-19" value="B" data-skill="reading" data-q="19"><span class="opt-letter">B.</span><span class="opt-text">A newspaper</span></label>
+<label class="opt"><input type="radio" name="reading-19" value="C" data-skill="reading" data-q="19"><span class="opt-letter">C.</span><span class="opt-text">A children's encyclopedia</span></label>
+<label class="opt"><input type="radio" name="reading-19" value="D" data-skill="reading" data-q="19"><span class="opt-letter">D.</span><span class="opt-text">A political leaflet</span></label>
+</div></div>
+<div class="q-card" id="reading-q20" data-skill="reading" data-q="20">
+<div class="q-num">Question 20</div>
+<div class="q-text"><b>What is the purpose of the writer when writing this text?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 20">
+<label class="opt"><input type="radio" name="reading-20" value="A" data-skill="reading" data-q="20"><span class="opt-letter">A.</span><span class="opt-text">To explain why people can see different constellations in different seasons</span></label>
+<label class="opt"><input type="radio" name="reading-20" value="B" data-skill="reading" data-q="20"><span class="opt-letter">B.</span><span class="opt-text">To explain why constellations are so important to people</span></label>
+<label class="opt"><input type="radio" name="reading-20" value="C" data-skill="reading" data-q="20"><span class="opt-letter">C.</span><span class="opt-text">To help readers know more about patterns of stars on the sky</span></label>
+<label class="opt"><input type="radio" name="reading-20" value="D" data-skill="reading" data-q="20"><span class="opt-letter">D.</span><span class="opt-text">To describe a phenomenon on the sky</span></label>
+</div></div>
+</div>
+</div>
+</section>
+<section class="passage-block" id="reading-passage3">
+<h3>PASSAGE 3 - Questions 21–30</h3>
+<div class="reading-grid">
+<div class="passage-col" tabindex="0" aria-label="Reading passage 3">
+<p class="pg">The discoveries of the white dwarf, the neutron star, and the black hole, coming well after the discovery of the red giant are among the most exciting developments in decades because <b>they</b> may be well present physicists with their greatest challenge since thefailure of classical mechanics. In the life cycle of the star, after all of the hydrogen and helium fuel has been burned, the delicate balance between the outer nuclear radiation, pressure and the stable gravitational force becomes disturbed and slow contraction begins. As compression increases, a very dense plasma forms. If the initial star had mass of less than 1.4 solar masses (1.4 times the mass of our sun), the process ceases at the density of 1,000 tons per cubic inch, and the star becomes the white dwarf. However, if the star was originally more massive, the white dwarf plasma can't resist the gravitations pressures, and in rapid collapse, all nuclear of the star are converted to a gas of free neutrons. Gravitational attraction compresses this neutron gas rapidly until a density of 10 tons per cubic inch is reached; <b>at this point</b> the strong nuclear force resists further contraction. If the mass of the star was between 1.4 and a few solar masses, the process stops here, and we have a neutron star. But if the original star was more <b>massive</b> than a few solar masses, even the strong nuclear forces cannot resist the gravitational crunch. The neutrons are forced into one another to form heavier hadrons and these in turn coalesce to form heavier entities, of which we as yet know nothing. At this point, a complete collapse of the stellar mass occurs; existing theories predict a collapse to infinite density and infinitely small dimensions Well before this, however, the surface gravitational force would become so strong that no signal could ever leave the star - any photon emitted would fall back under gravitational attraction – and the star would become black hole in space. This gravitational collapse poses a fundamental challenge to physics. When the most widely accepted theories predict such improbable things as infinite density and infinitely small dimensions, it simply means that we are missing some vital insight. This last happened in physics in the 1930's, when we faced the fundamental paradox concerning atomic structure. At that time, it was recognized that electrons moved in table orbits about nuclei in atoms. However, it was also recognized that if charge is accelerated, as it must be to remain in orbit, it radiates energy; so, theoretically, the electron would be expected eventually to spiral into the nucleus and destroy the atom. Studies centered around this paradox led to the development of quantum mechanics. It may well be that an equivalent advance awaits us in investigating the theoretical problems presented by the phenomenon of gravitational collapse.</p>
+</div>
+<div class="questions-col">
+<div class="q-card" id="reading-q21" data-skill="reading" data-q="21">
+<div class="q-num">Question 21</div>
+<div class="q-text"><b>Which of the following things was first discovered?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 21">
+<label class="opt"><input type="radio" name="reading-21" value="A" data-skill="reading" data-q="21"><span class="opt-letter">A.</span><span class="opt-text">The white dwarf</span></label>
+<label class="opt"><input type="radio" name="reading-21" value="B" data-skill="reading" data-q="21"><span class="opt-letter">B.</span><span class="opt-text">The neutron star</span></label>
+<label class="opt"><input type="radio" name="reading-21" value="C" data-skill="reading" data-q="21"><span class="opt-letter">C.</span><span class="opt-text">The black hole</span></label>
+<label class="opt"><input type="radio" name="reading-21" value="D" data-skill="reading" data-q="21"><span class="opt-letter">D.</span><span class="opt-text">The red giant</span></label>
+</div></div>
+<div class="q-card" id="reading-q22" data-skill="reading" data-q="22">
+<div class="q-num">Question 22</div>
+<div class="q-text"><b>What does the word "they" in line 3 refer to?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 22">
+<label class="opt"><input type="radio" name="reading-22" value="A" data-skill="reading" data-q="22"><span class="opt-letter">A.</span><span class="opt-text">The white dwarf</span></label>
+<label class="opt"><input type="radio" name="reading-22" value="B" data-skill="reading" data-q="22"><span class="opt-letter">B.</span><span class="opt-text">The white dwarf and the neutron star</span></label>
+<label class="opt"><input type="radio" name="reading-22" value="C" data-skill="reading" data-q="22"><span class="opt-letter">C.</span><span class="opt-text">The white dwarf, the neutron star and the black hole</span></label>
+<label class="opt"><input type="radio" name="reading-22" value="D" data-skill="reading" data-q="22"><span class="opt-letter">D.</span><span class="opt-text">The white dwarf, the neutron star, the black hole and the red giant</span></label>
+</div></div>
+<div class="q-card" id="reading-q23" data-skill="reading" data-q="23">
+<div class="q-num">Question 23</div>
+<div class="q-text"><b>The author asserts that the discoveries of the white dwarf, the neutron star, and the black hole are significant because these discoveries</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 23">
+<label class="opt"><input type="radio" name="reading-23" value="A" data-skill="reading" data-q="23"><span class="opt-letter">A.</span><span class="opt-text">demonstrate the probability of infinite density and infinitely small dimensions</span></label>
+<label class="opt"><input type="radio" name="reading-23" value="B" data-skill="reading" data-q="23"><span class="opt-letter">B.</span><span class="opt-text">pose the most comprehensive and fundamental problem faced by physicists in decades</span></label>
+<label class="opt"><input type="radio" name="reading-23" value="C" data-skill="reading" data-q="23"><span class="opt-letter">C.</span><span class="opt-text">clarify the paradox suggested by the collapse of electrons into atomic nuclei.</span></label>
+<label class="opt"><input type="radio" name="reading-23" value="D" data-skill="reading" data-q="23"><span class="opt-letter">D.</span><span class="opt-text">establish the relationship between the mass and gravitational pressure.</span></label>
+</div></div>
+<div class="q-card" id="reading-q24" data-skill="reading" data-q="24">
+<div class="q-num">Question 24</div>
+<div class="q-text"><b>What happens when compression increases?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 24">
+<label class="opt"><input type="radio" name="reading-24" value="A" data-skill="reading" data-q="24"><span class="opt-letter">A.</span><span class="opt-text">The hydrogen and helium fuel has been burned</span></label>
+<label class="opt"><input type="radio" name="reading-24" value="B" data-skill="reading" data-q="24"><span class="opt-letter">B.</span><span class="opt-text">The stable gravitational force becomes disturbed</span></label>
+<label class="opt"><input type="radio" name="reading-24" value="C" data-skill="reading" data-q="24"><span class="opt-letter">C.</span><span class="opt-text">very dense plasma forms</span></label>
+<label class="opt"><input type="radio" name="reading-24" value="D" data-skill="reading" data-q="24"><span class="opt-letter">D.</span><span class="opt-text">The process ceases at the density of 1,000 tons per cubic inch</span></label>
+</div></div>
+<div class="q-card" id="reading-q25" data-skill="reading" data-q="25">
+<div class="q-num">Question 25</div>
+<div class="q-text"><b>According to the passage, an imbalance arises between nuclear radiation pressure and gravitational force in stars because</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 25">
+<label class="opt"><input type="radio" name="reading-25" value="A" data-skill="reading" data-q="25"><span class="opt-letter">A.</span><span class="opt-text">the density of a star increases as it ages</span></label>
+<label class="opt"><input type="radio" name="reading-25" value="B" data-skill="reading" data-q="25"><span class="opt-letter">B.</span><span class="opt-text">radiation pressure increases as a star increases in mass</span></label>
+<label class="opt"><input type="radio" name="reading-25" value="C" data-skill="reading" data-q="25"><span class="opt-letter">C.</span><span class="opt-text">radiation pressure decreases when a star's fuel has been consumed</span></label>
+<label class="opt"><input type="radio" name="reading-25" value="D" data-skill="reading" data-q="25"><span class="opt-letter">D.</span><span class="opt-text">the collapse of a star increases its gravitational force.</span></label>
+</div></div>
+<div class="q-card" id="reading-q26" data-skill="reading" data-q="26">
+<div class="q-num">Question 26</div>
+<div class="q-text"><b>According to the passage, in the final stages of its development, our own sun is likely to take the form of a</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 26">
+<label class="opt"><input type="radio" name="reading-26" value="A" data-skill="reading" data-q="26"><span class="opt-letter">A.</span><span class="opt-text">white dwarf</span></label>
+<label class="opt"><input type="radio" name="reading-26" value="B" data-skill="reading" data-q="26"><span class="opt-letter">B.</span><span class="opt-text">neutron star</span></label>
+<label class="opt"><input type="radio" name="reading-26" value="C" data-skill="reading" data-q="26"><span class="opt-letter">C.</span><span class="opt-text">red giant</span></label>
+<label class="opt"><input type="radio" name="reading-26" value="D" data-skill="reading" data-q="26"><span class="opt-letter">D.</span><span class="opt-text">black hole</span></label>
+</div></div>
+<div class="q-card" id="reading-q27" data-skill="reading" data-q="27">
+<div class="q-num">Question 27</div>
+<div class="q-text"><b>The phrase "at this point" in the passage refers to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 27">
+<label class="opt"><input type="radio" name="reading-27" value="A" data-skill="reading" data-q="27"><span class="opt-letter">A.</span><span class="opt-text">the white dwarf plasma can't resist the gravitations pressures.</span></label>
+<label class="opt"><input type="radio" name="reading-27" value="B" data-skill="reading" data-q="27"><span class="opt-letter">B.</span><span class="opt-text">all nuclear of the star are converted to a gas of free neutrons.</span></label>
+<label class="opt"><input type="radio" name="reading-27" value="C" data-skill="reading" data-q="27"><span class="opt-letter">C.</span><span class="opt-text">a density of 10 tons per cubic inch is reached.</span></label>
+<label class="opt"><input type="radio" name="reading-27" value="D" data-skill="reading" data-q="27"><span class="opt-letter">D.</span><span class="opt-text">the strong nuclear force resists further contraction.</span></label>
+</div></div>
+<div class="q-card" id="reading-q28" data-skill="reading" data-q="28">
+<div class="q-num">Question 28</div>
+<div class="q-text"><b>The word "massive" in the passage is closest in meaning to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 28">
+<label class="opt"><input type="radio" name="reading-28" value="A" data-skill="reading" data-q="28"><span class="opt-letter">A.</span><span class="opt-text">Concrete</span></label>
+<label class="opt"><input type="radio" name="reading-28" value="B" data-skill="reading" data-q="28"><span class="opt-letter">B.</span><span class="opt-text">Enormous</span></label>
+<label class="opt"><input type="radio" name="reading-28" value="C" data-skill="reading" data-q="28"><span class="opt-letter">C.</span><span class="opt-text">Limited</span></label>
+<label class="opt"><input type="radio" name="reading-28" value="D" data-skill="reading" data-q="28"><span class="opt-letter">D.</span><span class="opt-text">Popular</span></label>
+</div></div>
+<div class="q-card" id="reading-q29" data-skill="reading" data-q="29">
+<div class="q-num">Question 29</div>
+<div class="q-text"><b>The author introduces the discussion of the paradox concerning atomic structures in order to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 29">
+<label class="opt"><input type="radio" name="reading-29" value="A" data-skill="reading" data-q="29"><span class="opt-letter">A.</span><span class="opt-text">show why it was necessary to develop quantum mechanics.</span></label>
+<label class="opt"><input type="radio" name="reading-29" value="B" data-skill="reading" data-q="29"><span class="opt-letter">B.</span><span class="opt-text">compare the structure of an atom with the structure of star.</span></label>
+<label class="opt"><input type="radio" name="reading-29" value="C" data-skill="reading" data-q="29"><span class="opt-letter">C.</span><span class="opt-text">demonstrate by analogy that a vital insight in astrophysics is missing.</span></label>
+<label class="opt"><input type="radio" name="reading-29" value="D" data-skill="reading" data-q="29"><span class="opt-letter">D.</span><span class="opt-text">illustrate the contention that improbable things do happen in astrophysics.</span></label>
+</div></div>
+<div class="q-card" id="reading-q30" data-skill="reading" data-q="30">
+<div class="q-num">Question 30</div>
+<div class="q-text"><b>The primary purpose of the passage is to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 30">
+<label class="opt"><input type="radio" name="reading-30" value="A" data-skill="reading" data-q="30"><span class="opt-letter">A.</span><span class="opt-text">offer new explanations for the collapse of stars.</span></label>
+<label class="opt"><input type="radio" name="reading-30" value="B" data-skill="reading" data-q="30"><span class="opt-letter">B.</span><span class="opt-text">explain the origins of black holes, neutron stars, and white dwarfs.</span></label>
+<label class="opt"><input type="radio" name="reading-30" value="C" data-skill="reading" data-q="30"><span class="opt-letter">C.</span><span class="opt-text">compare the structure of atoms with the structure of the solar system.</span></label>
+<label class="opt"><input type="radio" name="reading-30" value="D" data-skill="reading" data-q="30"><span class="opt-letter">D.</span><span class="opt-text">explain how the collapse of stars challenges accepted theories of physics.</span></label>
+</div></div>
+</div>
+</div>
+</section>
+<section class="passage-block" id="reading-passage4">
+<h3>PASSAGE 4 – Questions 31-40</h3>
+<div class="reading-grid">
+<div class="passage-col" tabindex="0" aria-label="Reading passage 4">
+<p class="pg">Minerals are naturally occuring solid substances formed by geologic movements in the Earth. Their main defining characteristics are that 1) they are inorganic (composed of non-living matter); 2) they have a crystal structure; and 3) they have a unique chemical composition. The type of mineral is determined both by its crystal structure and its chemical composition. A crystal structure occurs when the atoms inside the mineral are ordered in a geometric pattern that repeats itself throughout the mineral. All crystal structures fit into one of 14 possible "lattice" – regular pattern – arrangements of atoms, which lattices can be detected by X-rays.</p>
+<p class="pg">A mineral's physical traits are influenced by its crystal form. For example, both diamond and graphite are composed of the same element (carbon), but the former is the hardest mineral while <b>the latter</b> is soft. This is because graphite's crystal structure arranges the carbon atoms in sheets that can slide past each other, while diamond's carbon atoms are arrayed in a strong, interlocking network.</p>
+<p class="pg">Two minerals with <b>identical</b> crystal structures can have different chemical compositions. Thus, halite and gelena share the same crystal structure but are composed of different chemicals. Conversely, two minerals with the same chemical ingredients can differ in their crystal structure. For example, pyrite and marcasite both are made of iron sufide, but the arrangement of their atoms differs.</p>
+<p class="pg">According to the International Mineralogical Association, 4,000 minerals have been identified to date. Only about 150 of them are plentiful, and about 50 are classified as "occasional". The remainder are rarely found, some consisting of only small grains of rock. Minerals are often found as components of rocks, which may contain organic matter as well. Some rocks, which consist wholly of one mineral, such as calcite in limestone rock. Other rocks may host many minerals. Almost all of the rocks visible today contain one or more of a group of about 15 minerals, including quartz, mica, and felspa.</p>
+<p class="pg">The kinds of minerals found in any given rock are determined by these factors. First, the rock's chemical composition must be <b>hospitable</b> to particular mineral. For example, rocks containing silicon will likely contain quartz. Second, the conditions under which the rock was formed will influence the kinds of minerals found in the rock. Thus, rock born from <b>volcanic movements</b> at high temperatures and pressures may contain granite. Third, mineral distribution is affected by the geological stages through which the rock passed before reaching its present state. For example, exposure to moisture and acids may decay some minerals and cause others to take their place. During the changes from one ecological stage to another, the rock may <b>disintergrate</b> into sand or soil.</p>
+<p class="pg">Mineralogists classify minerals according to either physical properties or chemical composition. Minerals have numerous measurable physical properties. Hardness is measured on the "Mohs scale", which ranks hardness from one to 10. Any mineral can be cut or marked by a mineral with a higher ranking on the Mohs scale. Thus a diamond, with a rank of 10, can cut into quartz, with a rank of 7. Luster measures the reflection of light by the surface of the mineral. Metals have a higher luster than gypsum, which has a porous surface. Cleavage refers to the way a mineral splits apart along its natural grain, and fracture refers to its breakage against its natural cleavage planes. Streak is the color of the <b>residue</b> left by a mineral as it is rubbed across a special plate. Specific gravity measures the density of the mineral; it is computed by comparing the mass of the mineral to the mass of an equal volumn of water.</p>
+<p class="pg">Minerals can also be classified by their chemical characteristics. The most frequently occuring minerals are called silicates because of their large shares of silicon and oxygen. Almost all rocks fit this category. The second most common minerals are carbonates, which contain carbon and oxygen. Carbornates are found on the ocean floor as the deposits of decayed plankton. Aother grouping, halides, are found where water has evaporated, as in dried lake beds and landlocked seas such as the Great Salt Lake in Utah. Other common classes include sulfates, oxides, sulfides, and phosphates.</p>
+</div>
+<div class="questions-col">
+<div class="q-card" id="reading-q31" data-skill="reading" data-q="31">
+<div class="q-num">Question 31</div>
+<div class="q-text"><b>According to paragraph 1, which of the following is a characteristic of mineral?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 31">
+<label class="opt"><input type="radio" name="reading-31" value="A" data-skill="reading" data-q="31"><span class="opt-letter">A.</span><span class="opt-text">Crystal structure</span></label>
+<label class="opt"><input type="radio" name="reading-31" value="B" data-skill="reading" data-q="31"><span class="opt-letter">B.</span><span class="opt-text">Organic matter</span></label>
+<label class="opt"><input type="radio" name="reading-31" value="C" data-skill="reading" data-q="31"><span class="opt-letter">C.</span><span class="opt-text">Hardness</span></label>
+<label class="opt"><input type="radio" name="reading-31" value="D" data-skill="reading" data-q="31"><span class="opt-letter">D.</span><span class="opt-text">Smooth surface</span></label>
+</div></div>
+<div class="q-card" id="reading-q32" data-skill="reading" data-q="32">
+<div class="q-num">Question 32</div>
+<div class="q-text"><b>The word "the latter" in the passage refers to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 32">
+<label class="opt"><input type="radio" name="reading-32" value="A" data-skill="reading" data-q="32"><span class="opt-letter">A.</span><span class="opt-text">Mineral</span></label>
+<label class="opt"><input type="radio" name="reading-32" value="B" data-skill="reading" data-q="32"><span class="opt-letter">B.</span><span class="opt-text">Diamond</span></label>
+<label class="opt"><input type="radio" name="reading-32" value="C" data-skill="reading" data-q="32"><span class="opt-letter">C.</span><span class="opt-text">Graphite</span></label>
+<label class="opt"><input type="radio" name="reading-32" value="D" data-skill="reading" data-q="32"><span class="opt-letter">D.</span><span class="opt-text">Carbon</span></label>
+</div></div>
+<div class="q-card" id="reading-q33" data-skill="reading" data-q="33">
+<div class="q-num">Question 33</div>
+<div class="q-text"><b>The word "identical" in the passage is closest in meaning to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 33">
+<label class="opt"><input type="radio" name="reading-33" value="A" data-skill="reading" data-q="33"><span class="opt-letter">A.</span><span class="opt-text">Similar</span></label>
+<label class="opt"><input type="radio" name="reading-33" value="B" data-skill="reading" data-q="33"><span class="opt-letter">B.</span><span class="opt-text">Complex</span></label>
+<label class="opt"><input type="radio" name="reading-33" value="C" data-skill="reading" data-q="33"><span class="opt-letter">C.</span><span class="opt-text">Same</span></label>
+<label class="opt"><input type="radio" name="reading-33" value="D" data-skill="reading" data-q="33"><span class="opt-letter">D.</span><span class="opt-text">Contrasting</span></label>
+</div></div>
+<div class="q-card" id="reading-q34" data-skill="reading" data-q="34">
+<div class="q-num">Question 34</div>
+<div class="q-text"><b>According to the passage, two minerals with the same crystal structure can be different because ____</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 34">
+<label class="opt"><input type="radio" name="reading-34" value="A" data-skill="reading" data-q="34"><span class="opt-letter">A.</span><span class="opt-text">They have different specific gravities</span></label>
+<label class="opt"><input type="radio" name="reading-34" value="B" data-skill="reading" data-q="34"><span class="opt-letter">B.</span><span class="opt-text">They are found in different locations</span></label>
+<label class="opt"><input type="radio" name="reading-34" value="C" data-skill="reading" data-q="34"><span class="opt-letter">C.</span><span class="opt-text">They were formed by different geologic processes</span></label>
+<label class="opt"><input type="radio" name="reading-34" value="D" data-skill="reading" data-q="34"><span class="opt-letter">D.</span><span class="opt-text">They have different chemical compositions</span></label>
+</div></div>
+<div class="q-card" id="reading-q35" data-skill="reading" data-q="35">
+<div class="q-num">Question 35</div>
+<div class="q-text"><b>According to paragraph 3, halite and galena are different elements because</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 35">
+<label class="opt"><input type="radio" name="reading-35" value="A" data-skill="reading" data-q="35"><span class="opt-letter">A.</span><span class="opt-text">They have the same crystal sructure</span></label>
+<label class="opt"><input type="radio" name="reading-35" value="B" data-skill="reading" data-q="35"><span class="opt-letter">B.</span><span class="opt-text">They have different chemical compositions</span></label>
+<label class="opt"><input type="radio" name="reading-35" value="C" data-skill="reading" data-q="35"><span class="opt-letter">C.</span><span class="opt-text">They were formed by different geologic processes</span></label>
+<label class="opt"><input type="radio" name="reading-35" value="D" data-skill="reading" data-q="35"><span class="opt-letter">D.</span><span class="opt-text">They have different rankings on the Mohs scale</span></label>
+</div></div>
+<div class="q-card" id="reading-q36" data-skill="reading" data-q="36">
+<div class="q-num">Question 36</div>
+<div class="q-text"><b>The word "hospitable" in the passage is closest in meaning to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 36">
+<label class="opt"><input type="radio" name="reading-36" value="A" data-skill="reading" data-q="36"><span class="opt-letter">A.</span><span class="opt-text">Welcoming</span></label>
+<label class="opt"><input type="radio" name="reading-36" value="B" data-skill="reading" data-q="36"><span class="opt-letter">B.</span><span class="opt-text">Hostile</span></label>
+<label class="opt"><input type="radio" name="reading-36" value="C" data-skill="reading" data-q="36"><span class="opt-letter">C.</span><span class="opt-text">Comparable</span></label>
+<label class="opt"><input type="radio" name="reading-36" value="D" data-skill="reading" data-q="36"><span class="opt-letter">D.</span><span class="opt-text">Reactive</span></label>
+</div></div>
+<div class="q-card" id="reading-q37" data-skill="reading" data-q="37">
+<div class="q-num">Question 37</div>
+<div class="q-text"><b>Why does the author discuss the role of volcanic movements in creating rocks?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 37">
+<label class="opt"><input type="radio" name="reading-37" value="A" data-skill="reading" data-q="37"><span class="opt-letter">A.</span><span class="opt-text">To give an example of one of the Earth's geologic forces</span></label>
+<label class="opt"><input type="radio" name="reading-37" value="B" data-skill="reading" data-q="37"><span class="opt-letter">B.</span><span class="opt-text">To identify a factor that determines what kinds of minerals are found in rocks</span></label>
+<label class="opt"><input type="radio" name="reading-37" value="C" data-skill="reading" data-q="37"><span class="opt-letter">C.</span><span class="opt-text">To explain why some rocks contain silicon</span></label>
+<label class="opt"><input type="radio" name="reading-37" value="D" data-skill="reading" data-q="37"><span class="opt-letter">D.</span><span class="opt-text">To criticize the theory that minerals are created only by chemical reactions</span></label>
+</div></div>
+<div class="q-card" id="reading-q38" data-skill="reading" data-q="38">
+<div class="q-num">Question 38</div>
+<div class="q-text"><b>The word "disintergrate" in the passage is closest in meaning to</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 38">
+<label class="opt"><input type="radio" name="reading-38" value="A" data-skill="reading" data-q="38"><span class="opt-letter">A.</span><span class="opt-text">Decompose</span></label>
+<label class="opt"><input type="radio" name="reading-38" value="B" data-skill="reading" data-q="38"><span class="opt-letter">B.</span><span class="opt-text">Imbed</span></label>
+<label class="opt"><input type="radio" name="reading-38" value="C" data-skill="reading" data-q="38"><span class="opt-letter">C.</span><span class="opt-text">Pressurize</span></label>
+<label class="opt"><input type="radio" name="reading-38" value="D" data-skill="reading" data-q="38"><span class="opt-letter">D.</span><span class="opt-text">Decline</span></label>
+</div></div>
+<div class="q-card" id="reading-q39" data-skill="reading" data-q="39">
+<div class="q-num">Question 39</div>
+<div class="q-text"><b>Which of the following can be inferred about minerals on the Mohs scale?</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 39">
+<label class="opt"><input type="radio" name="reading-39" value="A" data-skill="reading" data-q="39"><span class="opt-letter">A.</span><span class="opt-text">Graphite is softer then gypsum.</span></label>
+<label class="opt"><input type="radio" name="reading-39" value="B" data-skill="reading" data-q="39"><span class="opt-letter">B.</span><span class="opt-text">Quartz can cut a mineral with a rank of 8.</span></label>
+<label class="opt"><input type="radio" name="reading-39" value="C" data-skill="reading" data-q="39"><span class="opt-letter">C.</span><span class="opt-text">Diamond can cut a mineral with a rank of 9.</span></label>
+<label class="opt"><input type="radio" name="reading-39" value="D" data-skill="reading" data-q="39"><span class="opt-letter">D.</span><span class="opt-text">The hardest minerals are metals.</span></label>
+</div></div>
+<div class="q-card" id="reading-q40" data-skill="reading" data-q="40">
+<div class="q-num">Question 40</div>
+<div class="q-text"><b>According to the passage, all of the following are properties of minerals except:</b></div>
+<div class="q-options" role="radiogroup" aria-label="Question 40">
+<label class="opt"><input type="radio" name="reading-40" value="A" data-skill="reading" data-q="40"><span class="opt-letter">A.</span><span class="opt-text">Claeavage</span></label>
+<label class="opt"><input type="radio" name="reading-40" value="B" data-skill="reading" data-q="40"><span class="opt-letter">B.</span><span class="opt-text">Luster</span></label>
+<label class="opt"><input type="radio" name="reading-40" value="C" data-skill="reading" data-q="40"><span class="opt-letter">C.</span><span class="opt-text">Streak</span></label>
+<label class="opt"><input type="radio" name="reading-40" value="D" data-skill="reading" data-q="40"><span class="opt-letter">D.</span><span class="opt-text">Weigh</span></label>
+</div></div>
+</div>
+</div>
+</section>
+  </div>
+  <div class="screen-footer">
+    <button type="button" class="btn btn-secondary" data-go="listening">BACK: LISTENING</button>
+    <button type="button" class="btn btn-primary" data-go="writing">NEXT: WRITING</button>
+  </div>
+</section>
+
+<!-- ============ SCREEN 4: WRITING ============ -->
+<section class="screen exam" id="screen-writing" data-skill="writing" hidden>
+  <div class="exam-title">WRITING TEST 1<br><span style="font-weight:normal">(Levels 3 – 5)<br>Time permitted: 60'</span></div>
+  <div class="warn" data-warn="writing" hidden></div>
+  <div class="lock-note" data-lock="writing" hidden>Time is up for this section. Your answers are locked.</div>
+  <div class="exam-body">
+<section class="task" id="writing-task-1">
+<h3>WRITING TASK 1</h3>
+<p>You should spend about <b>20 minutes</b> on this task.</p>
+<p>You have received an email from your English-speaking pen-friend John, who is planning to come to your country for a one-week holiday.</p>
+<div class="box">Hi! How are you doing? I've got one week free this summer and I'd really like to spend my time touring around your country. How can I get to your house from the airport?. Another thing, I will also need somewhere to stay – but not too expensive, of course. Every one says that food in your country is the best, so if you could have free time, would you take me a street food tour or travel around with me ? It would be great if you could.</div>
+<p>Write an email responding to John. You should write at least 120 words. You do not need to include your name or address.</p>
+<div class="writing-area" data-task="1">
+  <textarea id="writing-task1" class="writing-input" data-task="1" rows="16" spellcheck="false" autocomplete="off" aria-label="Writing Task 1 answer"></textarea>
+  <div class="wc-row"><span class="wc">Word count: <strong id="wc1">0</strong></span><span class="wc-target" id="wct1">Target: 120 words</span></div>
+</div>
+</section>
+<section class="task" id="writing-task-2">
+<h3>WRITING TASK 2</h3>
+<p>You should spend about <b>40 minutes</b> on this task.</p>
+<p>Write about the following topic.</p>
+<div class="box">Smoking is considered highly dangerous to our health because it impacts the smoker and the people around them. Therefore there should be some strict controls about smoking in public places.</div>
+<p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>
+<p>You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary and Grammar.</p>
+<div class="writing-area" data-task="2">
+  <textarea id="writing-task2" class="writing-input" data-task="2" rows="16" spellcheck="false" autocomplete="off" aria-label="Writing Task 2 answer"></textarea>
+  <div class="wc-row"><span class="wc">Word count: <strong id="wc2">0</strong></span><span class="wc-target" id="wct2">Target: 250 words</span></div>
+</div>
+<p style="text-align:center"><b>This is the end of the writing test</b></p>
+
+
+</section>
+  </div>
+  <div class="screen-footer">
+    <button type="button" class="btn btn-secondary" data-go="reading">BACK: READING</button>
+    <button type="button" class="btn btn-primary" data-go="review">REVIEW &amp; SUBMIT</button>
+  </div>
+</section>
+
+<!-- ============ SCREEN 5: REVIEW ============ -->
+<section class="screen" id="screen-review" hidden>
+  <div class="card review-card">
+    <h2 class="page-title">REVIEW BEFORE SUBMIT</h2>
+    <div id="review-body"></div>
+    <div class="review-actions">
+      <button type="button" class="btn btn-secondary btn-lg" id="btn-back-test">BACK TO TEST</button>
+      <button type="button" class="btn btn-primary btn-lg" id="btn-submit">SUBMIT TEST</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREEN 6: RESULT ============ -->
+<section class="screen" id="screen-result" hidden>
+  <div class="card result-card">
+    <h1 class="hero-brand">BETMA ENGLISH</h1>
+    <p class="hero-sub">TEST COMPLETED</p>
+    <div id="result-body"></div>
+    <div class="review-actions">
+      <button type="button" class="btn btn-secondary" id="btn-download">DOWNLOAD RESULT FILE (.json)</button>
+      <button type="button" class="btn btn-ghost" id="btn-new">START A NEW TEST</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ MODAL (confirmations / time-up messages) ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h2 id="modal-title"></h2>
+    <div id="modal-msg"></div>
+    <div class="modal-actions" id="modal-actions"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
