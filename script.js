@@ -21,6 +21,7 @@
    1. CONFIG + ANSWER KEY
    --------------------------------------------------------------------- */
 const STORAGE_KEY = 'betma_english_test_v1';
+const SUBMISSION_URL = 'https://script.google.com/macros/s/AKfycbxIlOmcoG8zs5XTDbct5F7IyqMm9djPQCpfO-wFzzgcoJKTjqWc3JjSEfwD2Q-wsIn0nA/exec';
 const SKILLS = ['listening', 'reading', 'writing'];
 const SKILL_NAME = { listening: 'LISTENING', reading: 'READING', writing: 'WRITING' };
 const TIME_LIMIT = { listening: 40 * 60, reading: 60 * 60, writing: 60 * 60 }; // seconds
